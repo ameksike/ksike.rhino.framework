@@ -9,7 +9,7 @@
 process.env.KSRP = process.env.KSRP ? process.env.KSRP : __dirname + "/../../../../";
 process.env.KSRP = require('path').resolve(process.env.KSRP) + require('path').sep;
 process.env.KCFG = process.env.KCFG ? process.env.KCFG :  "/cfg/config.json";
-require(__dirname + "/../lib/kfn");
+global.Ksike = {};
 Ksike.src = require(__dirname + "/../");
 Ksike.framework = new Ksike.src.Main({
 	"root" : process.env.KSRP,

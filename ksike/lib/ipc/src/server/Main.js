@@ -14,6 +14,7 @@ class Ipc
     }
 
     start(app, arvs=[], background=true, opt=false){
+		console.log(arguments);
         try{
             opt = opt ? opt : (background ? {detached: true, stdio: 'ignore'} : {});
             var child = require('child_process').spawn(app, arvs, opt);
