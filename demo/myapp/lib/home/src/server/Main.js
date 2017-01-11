@@ -1,5 +1,5 @@
 /*
- * @author		 
+ * @author		Antonio Membrides Espinosa
  * @package    	demo
  * @created		9/0/2017
  * @updated		9/0/2017
@@ -19,6 +19,24 @@ class Main
 
     posAction(req, assist) {
         //... do it
+    }
+    /*
+     * name: form
+     * description: ejemplo de la utilizacion de formularios
+     * */
+    form(req) {
+        return require('fs').readFileSync(__dirname + "/../client/html/form.html");
+    }
+    /*
+    * name: request
+    * description: maipular las peticiones WEB y CLI
+    * */
+    req(req, assist){
+        return req;
+    }
+
+    config(req, assist){
+
     }
 }
 exports.Main = Main;

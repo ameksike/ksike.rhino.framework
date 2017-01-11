@@ -1,0 +1,41 @@
+{
+  "mode": "http",
+  "host": "0.0.0.0",
+  "port": 3002,
+  "www": {
+    "windows": "D:\\users\\tony\\proj\\github\\ksike-rhino\\demo\\mygal",
+    "linux":  "/media/data/users/tony/proj/github/ksike-rhino/demo/mygal"
+  },
+  "log": "log/",
+  "index": [ "index.html" ],
+  "mods":{
+    "onConfigure":[{
+      "target": "krhino",
+      "cfg": {
+        "ns": "lib/vendor/ksike/",
+        "cfg": {
+          "load" : true,
+          "path" : "/cfg/config.json"
+        }
+      }
+    }],
+    "onRequest": [ "front", "krhino" ],
+    "onStart": ["front"],
+    "onDirRequest": ["krhino", "front"],
+    "onFileRequest": ["front"]
+  },
+  "bind":{
+    "php": ["php", "5.4.25"],
+    "njs": "nodejs",
+    "nsp": "nodejs",
+    "py": "python"
+  },
+  "bins":{
+    "nodejs":{
+      "default": {
+        "version":"6.9.1",
+        "architecture": "x86"
+      }
+    }
+  }
+}
