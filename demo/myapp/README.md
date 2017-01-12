@@ -25,3 +25,6 @@ Administración de los servicios de Raikg:
     Conocer el estado del servidor  de aplicaciones web desde window:  bin/cli.bat  raikg:service:status
     Conocer el estado del servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:status
 	
+Utilizar el binario del proyecto independiente del sistema operativo a través de NodeJs:
+    node bin/cli.js  [comando]
+		
