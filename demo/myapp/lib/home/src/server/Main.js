@@ -6,9 +6,41 @@
  * @copyright  	Copyright (c) 2015-2020
  * @license    	GPL v3.0
  * @version    	1.0
+ * @description El objetivo de este módulo es mostrar a través de pequeñas funciones o acciones
+ *              mostrar las potencialidades del framework Ksike Rhino.
+ *              Este es el archivo principal del módulo, donde se define la clase interfaz del mismo,
+ *              esta puede tomar cualquier nombre, aunque por defecto se especifica Main,
+ *              sin embargo, es obligatorio exportarla a través del incide denominado Main.
+ *              Nótese que la sintaxis de declaración de clases corresponde al estándar denominado ECMAScript 6
+ *              por consiguiente, se debe garantizar soporte para el mismo o de lo contrario daría error,
+ *              en caso de utilizar navegadores que no lo soporte o una versión inferior de NodeJs, puede
+ *              optar por utiliza el moodulo Ksike/OOP el cual provee una pequeña API para utilizar
+ *              el Paradigma de Programación Orientado a Objeto con el lenguaje JavaScript.
  * */
 class Main
 {
+    /*
+     * name: constructor
+     * description: el constructor es de carácter opcional y se ejecuta una sola vez al inicializar el modulo
+     * */
+    constructor() {
+        /*
+        * en este caso se procede a almacenar en la variable global a la clase denominada 'path'
+        * el directorio del módulo de forma estática sin utilizar el recurso ksike/router.
+        * */
+        this.path = __dirname + "/../../";
+        /*
+        * notese como la variable global denominada __dirname hace referencia al directorio
+        * en que se encuentra el archivo en el que se utiliza, esto es un recurso nativo de NodeJs.
+        * */
+
+        /*
+        * Se aconseja que cada producto contenga un módulo denominado Home o Main, con la responsabilidad
+        * de garantizar el maquetado o interfaz principal de la aplicación, así como regir elementos
+        * de carácter horizontal para el resto de los módulos de esta forma es mucho más fácil
+        * llevar a cabo los procesos de mantenimiento y asimilación del producto.
+        * */
+    }
     /*
      * name: index
      * description: ejemplo de definición de un función o acción para este modulo
@@ -21,7 +53,7 @@ class Main
         * El parametro denominado assist constituye un recurso importante del framework
         * que abstrae a los desarrolladores del acceso a otros modulos.
         *
-        * El valor de retorno de la función o acción de este módulo será mostrado en 
+        * El valor de retorno de la función o acción de este módulo será mostrado en
         * pantalla como salida.
         * */
         return "HOLA_MUNDO";
@@ -66,6 +98,14 @@ class Main
     form(req) {
         //... en este ejemplo se renderiza el contenido html del archivo form de forma manual
         return require('fs').readFileSync(__dirname + "/../client/html/form.html");
+    }
+    /*
+    * name: templates
+    * description: ejemplo de renderizacion de plantillas utilizando el recurso ksike/view
+    * */
+    templates(req, assist){
+
+        return assist.get("ksike/view").render("galery1", this.path);
     }
     /*
      * name: configGet
@@ -134,4 +174,10 @@ class Main
         console.log(home);
     }
 }
+/*
+* Nótese el recurso denominado 'exports' es el mecanismo definido por NodeJs
+* para exportar una objetos, clases y funciones pertenecientes a un módulo en particular,
+* por defecto los módulos se exportan el en índice denominado Main, esta restricción de nomenclatura
+* es utilizada por el recurso ksike/loader.
+* */
 exports.Main = Main;
