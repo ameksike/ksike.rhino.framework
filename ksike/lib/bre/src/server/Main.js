@@ -3,7 +3,7 @@
  * @package    	Ksike Rhino Base Run Environment
  * @created		28/10/2016
  * @updated		28/10/2016
- * @copyright  	Copyright (c) 2015-2015
+ * @copyright  	Copyright (c)
  * @license    	GPL
  * @version    	1.0
  * */

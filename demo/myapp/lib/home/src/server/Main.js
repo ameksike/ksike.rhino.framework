@@ -186,6 +186,19 @@ class Main
         var home = assist.get('home');
         console.log(home);
     }
+    /*
+     * name: idiomGet
+     * description: ejemplo de cómo obtener los datos en función del idioma establecido para el sistema
+     * */
+    idiomGet(req, assist){
+        //... obteniendo la configuracion global
+        var global = assist.get('ksike/idiom').get();
+        //... obteniendo la configuracion global
+        var root = assist.get('ksike/idiom').get('root');
+        //... obteniendo la configuracion local al modulo home
+        var local = assist.get('ksike/idiom').get('home');
+        return global;
+    }
 }
 /*
 * Nótese el recurso denominado 'exports' es el mecanismo definido por NodeJs

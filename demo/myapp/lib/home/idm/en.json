@@ -1,1 +1,5 @@
-{}
+{
+	"name":"hello",
+	"type": "test",
+	"local": "positive"
+}

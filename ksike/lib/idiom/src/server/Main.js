@@ -36,6 +36,7 @@ class Main
     }
 
     get(path=false, index=false, force=false){
+        path = path ? path : 'root';
         path = this.resolve(path, index);
         if(!path) return false;
         if(!this.cache[path]){
