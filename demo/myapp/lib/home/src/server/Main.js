@@ -38,7 +38,7 @@ class Main
         * Se aconseja que cada producto contenga un módulo denominado Home o Main, con la responsabilidad
         * de garantizar el maquetado o interfaz principal de la aplicación, así como regir elementos
         * de carácter horizontal para el resto de los módulos de esta forma es mucho más fácil
-        * llevar a cabo los procesos de mantenimiento y asimilación del producto.
+        * llevar a cabo los procesos de mantenimiento y asimilación del produc
         * */
     }
     /*
@@ -100,12 +100,25 @@ class Main
         return require('fs').readFileSync(__dirname + "/../client/html/form.html");
     }
     /*
-    * name: templates
-    * description: ejemplo de renderizacion de plantillas utilizando el recurso ksike/view
+    * name: tplStatic
+    * description: ejemplo de renderizacion de plantillas html simles utilizando el recurso ksike/view
     * */
-    templates(req, assist){
-
-        return assist.get("ksike/view").render("galery1", this.path);
+    tplStatic(req, assist){
+        return assist.get("ksike/view").render("hol", this.path);
+    }
+    /*
+     * name: tplDynamic
+     * description: ejemplo de renderizacion de plantillas html dinamicas utilizando el recurso ksike/view
+     * */
+    tplDynamic(req, assist){
+        return assist.get("ksike/view").render("hol2", this.path, 'html', { name: 'Tomy' });
+    }
+    /*
+     * name: tplTwig
+     * description: ejemplo de renderizacion de plantillas html simles utilizando el recurso ksike/view
+     * */
+    tplTwig(req, assist){
+        return assist.get("ksike/view").render("hol2", this.path, 'twig', { name: 'Tomy' });
     }
     /*
      * name: configGet

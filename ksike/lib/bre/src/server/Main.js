@@ -14,7 +14,7 @@ class Main
         this.root = this.assist.get("ksike/router").path("root");
         if(assist.cfg.bre){
             if(assist.cfg.bre.nodejs){
-                this.setNodePath(assist.cfg.router.path.root + assist.cfg.bre.nodejs.modules);
+                this.setNodePath(assist.get("ksike/router").normalize(assist.cfg.bre.nodejs.modules));
             }
             if(assist.cfg.bre.vendor){
                 for(var i in assist.cfg.bre.vendor)

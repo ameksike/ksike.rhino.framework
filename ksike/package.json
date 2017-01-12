@@ -1,7 +1,7 @@
 {
   "name": "Ksike_Rhino_Framework",
   "version": "1.0.0",
-  "build": "0.0.3.15",
+  "build": "0.0.3.16",
   "main": "src/server/Main.js",
   "author": "Antonio Membrides Espinosa",
   "license": "GPL"

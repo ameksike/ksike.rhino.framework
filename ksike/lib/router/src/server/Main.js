@@ -41,7 +41,7 @@ class Main
         return false;
     }
 
-    path(pattern){
+    path(pattern='root'){
         var tmp = this.resolve(pattern, "locate");
         return tmp["dir"] ? require('path').resolve(tmp["dir"]) + require('path').sep : false;
     }

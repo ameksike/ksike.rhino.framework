@@ -19,6 +19,7 @@
         }
       }
     }],
+    "onError": [ "front" ],
     "onRequest": [ "front", "krhino" ],
     "onStart": ["front"],
     "onDirRequest": ["krhino", "front"],

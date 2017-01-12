@@ -1,1 +1,94 @@
-{"raikg":{"virtualhost":"cfg/virtualhost/"},"ksike":{"idiom":{"default":"en"},"bre":{"nodejs":{"modules":"lib/vendor/node_modules/"},"vendor":["ksike/koop","ksike/fn"]},"router":{"mode":["equal","first","finds"],"path":{"root":"","scope":["lib/"],"domain":["src/server/","src/common/","src/",""],"index":["Main.js","Index.js","index.js"]},"request":{"default":{"type":"request","controller":"home","action":"index"},"pattern":{"/ksike":{"namespace":"ksike/"},"/raikg":{"namespace":"raikg/"}}},"locate":{"pattern":{"ksike":"../../ksike/","raikg":"../../../raikg-rhino/raikg/"}}},"engine":{"bind":{"onConfigure":["ksike/bre","ksike/response","ksike/view"],"onRequest":["ksike/request"],"onDispatch":["ksike/front"],"onResponse":["ksike/response"],"onError":["ksike/error"]},"workflow":["onStart","onRequest","onAccess","onDispatch","onRender","onResponse","onStop"]}}}
+{
+  "raikg": {
+    "virtualhost": "cfg/virtualhost/"
+  },
+  "ksike": {
+    "idiom": {
+      "default": "en"
+    },
+    "bre": {
+      "nodejs": {
+        "modules": "lib/vendor/node_modules/"
+      },
+      "vendor": [
+        "ksike/koop",
+        "ksike/fn"
+      ]
+    },
+    "router": {
+      "mode": [
+        "equal",
+        "first",
+        "finds"
+      ],
+      "path": {
+        "root": "",
+        "scope": [
+          "lib/"
+        ],
+        "domain": [
+          "src/server/",
+          "src/common/",
+          "src/",
+          ""
+        ],
+        "index": [
+          "Main.js",
+          "Index.js",
+          "index.js"
+        ]
+      },
+      "request": {
+        "default": {
+          "type": "request",
+          "controller": "home",
+          "action": "index"
+        },
+        "pattern": {
+          "/ksike": {
+            "namespace": "ksike/"
+          },
+          "/raikg": {
+            "namespace": "raikg/"
+          }
+        }
+      },
+      "locate": {
+        "pattern": {
+          "ksike": "../../ksike/",
+          "raikg": "../../../raikg-rhino/raikg/"
+        }
+      }
+    },
+    "engine": {
+      "bind": {
+        "onConfigure": [
+          "ksike/bre",
+          "ksike/response",
+          "ksike/view"
+        ],
+        "onRequest": [
+          "ksike/request"
+        ],
+        "onDispatch": [
+          "ksike/front"
+        ],
+        "onResponse": [
+          "ksike/response"
+        ],
+        "onError": [
+          "ksike/error"
+        ]
+      },
+      "workflow": [
+        "onStart",
+        "onRequest",
+        "onAccess",
+        "onDispatch",
+        "onRender",
+        "onResponse",
+        "onStop"
+      ]
+    }
+  }
+}

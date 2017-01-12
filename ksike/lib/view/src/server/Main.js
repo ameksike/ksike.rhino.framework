@@ -27,9 +27,18 @@ class Main
 
     render(name="index", path="", type="html", param={}){
         var tpl = path + "src/client/"+ (type=="html" ? "html" : "tpl") +"/"+name+"."+type;
-        if(type=="html") return this.get(tpl);
+
+        if(type=="html"){
+            var name = 'tastico';
+            var tmp = this.get(tpl).toString();
+            console.log(tmp);
+            var t = ` ${tmp} `;
+            console.log(t);
+            return t;
+        }
         else{
             var _this = this;
+            console.log(tpl);
             require("twig").renderFile(tpl, param, function (err, html) {
                 _this.response.end(html);
             });
