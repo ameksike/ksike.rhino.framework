@@ -5,37 +5,22 @@ El modulo principal se denomina home, este proyecto además se integra directame
 Instalación:
 
 	1- git clone https://github.com/ameksike/ksike-rhino.git
-	
 	2- git clone https://github.com/ameksike/raikg-rhino.git
-
 	3- Configurar las rutas de acceso a Ksike Framework y Raikg Server
-	
 		para esto se debe modificar en el fichero 'myapp/cfg/config.json' las siguientes variables:
-		
 			ksike.router.locate.pattern.ksike => especificar localización del framework Ksike, aunque por defecto lo debe encontrar.
-			
 			ksike.router.locate.pattern.raikg => especificar localización del servidor Raikge.
-			
 	4- Iniciar el servidor de aplicaciones web, véase el apartado de Administración de los servicios de Raikg.
-	
 	5- Acceder desde un navegador web a la url: http://localhost:3001/
 	
 
 Administración de los servicios de Raikg:
-
 	Iniciar el servidor de aplicaciones web desde window:  bin/cli.bat  raikg:service:start 
-	
 	Iniciar el servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:start  
-	
 	Detener el servidor de aplicaciones web desde window:  bin/cli.bat  raikg:service:stop  
-	
 	Detener el servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:stop 
-	
 	Reiniciar el servidor de aplicaciones web desde window:  bin/cli.bat  raikg:service:restart
-	
 	Reiniciar el servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:restart 
-	
 	Conocer el estado del servidor  de aplicaciones web desde window:  bin/cli.bat  raikg:service:status
-	
 	Conocer el estado del servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:status
 	
