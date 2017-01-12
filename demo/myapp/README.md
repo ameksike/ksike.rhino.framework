@@ -15,12 +15,13 @@ Instalación:
 	
 
 Administración de los servicios de Raikg:
-	Iniciar el servidor de aplicaciones web desde window:  bin/cli.bat  raikg:service:start 
-	Iniciar el servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:start  
-	Detener el servidor de aplicaciones web desde window:  bin/cli.bat  raikg:service:stop  
-	Detener el servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:stop 
-	Reiniciar el servidor de aplicaciones web desde window:  bin/cli.bat  raikg:service:restart
-	Reiniciar el servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:restart 
-	Conocer el estado del servidor  de aplicaciones web desde window:  bin/cli.bat  raikg:service:status
-	Conocer el estado del servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:status
+
+    Iniciar el servidor de aplicaciones web desde window:  bin/cli.bat  raikg:service:start
+    Iniciar el servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:start
+    Detener el servidor de aplicaciones web desde window:  bin/cli.bat  raikg:service:stop  
+    Detener el servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:stop 
+    Reiniciar el servidor de aplicaciones web desde window:  bin/cli.bat  raikg:service:restart
+    Reiniciar el servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:restart 
+    Conocer el estado del servidor  de aplicaciones web desde window:  bin/cli.bat  raikg:service:status
+    Conocer el estado del servidor de aplicaciones web desde GNU/Linux:  bin/cli.sh  raikg:service:status
 	
