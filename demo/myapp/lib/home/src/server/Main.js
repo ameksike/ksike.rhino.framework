@@ -111,14 +111,14 @@ class Main
      * description: ejemplo de renderizacion de plantillas html dinamicas utilizando el recurso ksike/view
      * */
     tplDynamic(req, assist){
-        return assist.get("ksike/view").render("hol2", this.path, 'html', { name: 'Tomy' });
+        return assist.get("ksike/view").render("hol2", this.path, 'html', { name: 'Tomy', age:23  });
     }
     /*
      * name: tplTwig
      * description: ejemplo de renderizacion de plantillas html simles utilizando el recurso ksike/view
      * */
     tplTwig(req, assist){
-        return assist.get("ksike/view").render("hol2", this.path, 'twig', { name: 'Tomy' });
+        return assist.get("ksike/view").render("hol2", this.path, 'twig', { name: 'Tomy', age:23 });
     }
     /*
      * name: configGet

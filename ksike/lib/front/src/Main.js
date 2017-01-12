@@ -2,7 +2,7 @@
  * @author		Antonio Membrides Espinosa
  * @package    	Front
  * @date		23/10/2016
- * @copyright  	Copyright (c) 2015-2015
+ * @copyright  	Copyright (c) 
  * @license    	GPL
  * @version    	1.0
  * */
@@ -24,10 +24,15 @@ class Main {
 
     onDispatch(assist){
         this.assist = assist;
-        var req = assist.get("ksike/router").resolve(assist.get("ksike/engine").request);
-        assist.get("ksike/engine").request  = req;
-        var out = this.execute(req.controller, req.action, [ req.param, assist] );
-        assist.get("ksike/engine").response.data[req.pattern ? req.pattern : "default"] = out;
+        try {
+            var req = assist.get("ksike/router").resolve(assist.get("ksike/engine").request);
+            assist.get("ksike/engine").request  = req;
+            var out = this.execute(req.controller, req.action, [ req.param, assist] );
+            assist.get("ksike/engine").response.data[req.pattern ? req.pattern : "default"] = out;
+        }catch (error){
+            assist.get("ksike/event").emit("onError", error);
+            assist.get("ksike/engine").response.data[req.pattern ? req.pattern : "default"] = 'error';
+        }
     }
 }
 exports.Main = Main;

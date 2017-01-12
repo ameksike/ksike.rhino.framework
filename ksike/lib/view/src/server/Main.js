@@ -1,8 +1,9 @@
 /*
  * @author		Antonio Membrides Espinosa
  * @package    	Ksike Rhino View
- * @date		26/10/2016
- * @copyright  	Copyright (c) 2015-2015
+ * @created		26/10/2016
+ * @updated		28/12/2016
+ * @copyright  	Copyright (c)
  * @license    	GPL
  * @version    	1.0
  * */
@@ -21,31 +22,44 @@ class Main
         this.configure(assist.rsc);
     }
 
-    get(path){
-        return require('fs').readFileSync(path);
+    get(_path){
+        return require('fs').readFileSync(_path);
     }
 
-    render(name="index", path="", type="html", param={}){
-        var tpl = path + "src/client/"+ (type=="html" ? "html" : "tpl") +"/"+name+"."+type;
-
-        if(type=="html"){
-            var name = 'tastico';
-            var tmp = this.get(tpl).toString();
-            console.log(tmp);
-            var t = ` ${tmp} `;
-            console.log(t);
-            return t;
+    render(_name="index", _path="", _type="html", _param={}){
+        var tpl = _path + "src/client/"+ (_type=="html" ? "html" : "tpl") +"/"+_name+"."+_type;
+        if(_type=="html"){
+            var _tmp = ``;
+            var _tpl = this.get(tpl).toString();
+            this.setvar(_param);
+            eval('_tmp = `'+_tpl+'`; ' );
+            this.delvar(_param);
+            return _tmp;
         }
         else{
             var _this = this;
-            console.log(tpl);
-            require("twig").renderFile(tpl, param, function (err, html) {
-                _this.response.end(html);
-            });
-            return false;
+            if(!require('fs').existsSync(tpl)) return false;
+            try {
+                require("twig").renderFile(tpl, _param, function (err, html) {
+                    _this.response.end(html);
+                });
+            }
+            catch (error) {
+                assist.get("ksike/event").emit("onError", error);
+            }
         }
     }
 
+    setvar(src){
+        for(var i in src){
+            global[i] = src[i];
+        }
+    }
+
+    delvar(src){
+        for(var i in src)
+           delete global[i];
+    }
     
 }
 exports.Main = Main;
