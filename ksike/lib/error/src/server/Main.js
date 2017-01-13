@@ -11,6 +11,7 @@ class Error {
     onError(error) {
         console.log(error.name); // logs 'Error'
         console.log(error.message); // logs 'The message' o un error de JavaScript)
+
     }
 }
 exports.Main = Error;

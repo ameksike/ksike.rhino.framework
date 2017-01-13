@@ -196,7 +196,7 @@ class Main
         //... obteniendo la configuracion global
         var root = assist.get('ksike/idiom').get('root');
         //... obteniendo la configuracion local al modulo home
-        var local = assist.get('ksike/idiom').get('home');
+        var local = assist.get('ksike/idiom').get('home';
         return global;
     }
 }

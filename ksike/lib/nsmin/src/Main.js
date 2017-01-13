@@ -71,6 +71,7 @@ class Main
     }
 
     resolve(pattern){
+        pattern = typeof (pattern) === 'string' ? pattern.replace(new RegExp(":","gi"), "/") : pattern; 
         var _this = this;
         var _reqs = typeof(pattern) === "object" ? pattern : {
             "pattern": pattern

@@ -41,6 +41,11 @@ class Main
         return false;
     }
 
+    nsMin(type='locate'){
+        this.nsmin.configure(this.cfg[type]);
+        return this.nsmin;
+    }
+
     path(pattern='root'){
         var tmp = this.resolve(pattern, "locate");
         return tmp["dir"] ? require('path').resolve(tmp["dir"]) + require('path').sep : false;
