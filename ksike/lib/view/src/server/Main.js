@@ -19,6 +19,7 @@ class Main
     }
 
     onConfigure(assist){
+        this.assist = assist;
         this.configure(assist.rsc);
     }
 
@@ -28,6 +29,10 @@ class Main
 
     render(_name="index", _path="", _type="html", _param={}){
         var tpl = _path + "src/client/"+ (_type=="html" ? "html" : "tpl") +"/"+_name+"."+_type;
+        _param = typeof (_param) == 'object' ? _param : {};
+        _param['assist'] = this.assist;
+        _param['view'] = this;
+
         if(_type=="html"){
             var _tmp = ``;
             var _tpl = this.get(tpl).toString();
@@ -48,6 +53,14 @@ class Main
                 assist.get("ksike/event").emit("onError", error);
             }
         }
+    }
+
+    url(mod, src=''){
+        return '/'+this.assist.get('ksike/router').url(mod)+src;
+    }
+
+    path(mod){
+        return this.assist.get('ksike/router').path(mod);
     }
 
     setvar(src){

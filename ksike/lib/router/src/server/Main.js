@@ -51,6 +51,15 @@ class Main
         return tmp["dir"] ? require('path').resolve(tmp["dir"]) + require('path').sep : false;
     }
 
+    url(mod='home'){
+        var tmp = require('path').relative(
+            this.path(),
+            this.path(mod)
+        );
+        tmp += '/src/client';
+        return tmp;
+    }
+
     normalize(path, root=false){
         var tmp = require('path').resolve(path);
         if(require('fs').existsSync(tmp))

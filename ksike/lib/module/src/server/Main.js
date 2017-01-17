@@ -21,12 +21,11 @@ class Main {
         var tplb = req["REQUEST"][1] ? req["REQUEST"][1] : "mod_std";
         var modn = req["REQUEST"][0] ? req["REQUEST"][0] : "home";
         var optp = this.assist.get("ksike/router").nsMin().resolve(modn);
-
         var name = optp ? ((!optp.name || optp.name == "") ? optp.pattern : optp.name ) : modn;
         var path = optp ? this.assist.get("ksike/router").normalize(optp.path) : this.assist.get("ksike/router").path();
+        if(!path) return false;
         path += "lib" + require('path').sep;
         path += name + require('path').sep;
-
         var date = new Date();
         var opt = {
             "author": " ",
@@ -76,15 +75,13 @@ class Main {
     }
 
     delete(req, assist) {
-        req["REQUEST"][0] = req["REQUEST"][0] ? req["REQUEST"][0] : "demo";
-        var optp = this.assist.get("ksike/router").resolve(req["REQUEST"][0]);
-        var name = (!optp.name || optp.name == "") ? optp.pattern : optp.name;
-        var path = this.assist.get("ksike/router").path(optp.namespace);
-        path = path ? path : this.assist.get("ksike/router").path("root") + "lib/";
-        path += name + "/";
-
-        if (req["REQUEST"][0])  this.rmdir(path);
-        return true;
+        var name = req["REQUEST"][0] ? req["REQUEST"][0] : "demo";
+        var path = this.assist.get("ksike/router").path(name);
+        if(path){
+            this.rmdir(path);
+            return true;
+        }
+        return false;
     }
     remove(req, assist){
         return this.delete(req, assist);
