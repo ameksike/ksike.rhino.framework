@@ -1,1 +1,8 @@
-# ksike-rhino
+# Ksike Rhino Framework
+Ksike Framework Rhino series, consists of a specialized framework for the JavaScript programming language on NodeJs, which incorporates a group of well structured architectural and design patterns, taking up the best practices of other frameworks of different technologies.
+
+
+# .............................................................
+
+Ksike Framework serie Rhino, consiste en un marco de trabajo especializado para el lenguaje de programación JavaScript sobre NodeJs, el cual incorpora una serie de patrones arquitectónicos y de diseño bien estructurados, retomando las mejores prácticas de otros marcos de trabajo de distintas tecnologías.
+
