@@ -3,7 +3,7 @@
     "name": "Antonio Membrides Espinosa"
   },
   "dependencies": {
-    "tar": "^1.0.0",
+    "tar": "^5.0.5",
     "zlib": "^1.0.0",
     "fstream": "^1.0.0",
     "jszip": "^1.0.0"
