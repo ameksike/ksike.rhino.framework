@@ -9,7 +9,6 @@ There are other editions of this framework oriented to other technologies such a
 
 + [Ksike Framework Larva](https://github.com/ameksike/ksike.larva)
 + [Ksike Framework Elephant focus on PHP](https://github.com/ameksike/ksike.elephant)
-+ [Ksike Framework Elephant focus on PHP](https://github.com/ameksike/ksike.elephant)
 + [Ksike Framework focus on Java](https://github.com/ameksike/ksike.java.core.plugin)
 
 
